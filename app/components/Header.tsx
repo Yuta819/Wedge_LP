@@ -104,10 +104,10 @@ const SimpleFloatingNav = ({
       className={`fixed left-[50%] top-8 flex w-[90%] max-w-5xl -translate-x-[50%] items-center justify-between rounded-lg border-[1px] ${
         isTransparent ? "border-transparent" : "border-transparent"
       } ${
-        isTransparent ? "bg-transparent" : "bg-transparent"
+        isTransparent ? "bg-transparent" : "bg-white/10"
       } p-2 text-xs sm:text-sm ${
-        isTransparent ? "text-black" : "text-black"
-      } shadow-md z-[110]`}
+        isTransparent ? "backdrop-none" : "backdrop-blur-sm"
+      } shadow-md z-[110] text-black`}
     >
       <Logo isTransparent={isTransparent} />
       <div
