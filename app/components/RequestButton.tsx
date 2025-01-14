@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
@@ -13,7 +11,9 @@ const RequestButton: React.FC<RequestButtonProps> = ({ onClick }) => {
     <StyledButtonWrapper>
       <StyledButtonContainer>
         <Link href="https://www.aaa-wedge.co.jp/contact/" passHref>
-          <StyledButton>無料相談</StyledButton>
+          <StyledButton href="https://www.aaa-wedge.co.jp/contact/">
+            無料相談
+          </StyledButton>
         </Link>
       </StyledButtonContainer>
       <StyledWaveContainer>
@@ -107,7 +107,7 @@ const StyledWaveContainer = styled.div`
   }
 `;
 
-const StyledButton = styled.div`
+const StyledButton = styled.button`
   width: 60px;
   height: 60px;
   border-radius: 50%;

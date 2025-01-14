@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+"use client";
 
 export interface ItemType {
   id: number;

@@ -3,7 +3,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import { Wallet, Settings, Server, LineChart, Shield, X } from "lucide-react";
+import {
+  Wallet,
+  Settings,
+  Server,
+  LineChart,
+  Shield,
+  Plus,
+  X,
+} from "lucide-react";
 import styles from "./Available.module.css";
 
 // カードデータ
@@ -53,41 +61,6 @@ const cards = [
   },
 ];
 
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-`;
-
-const Section = styled.section`
-  padding: 4rem 0;
-`;
-
-const Timeline = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-`;
-
-const TimelineItem = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-`;
-
-const Classification = styled.div`
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-`;
-
-const Subtitle = styled.p`
-  text-align: center;
-  color: #666;
-  margin-bottom: 2rem;
-`;
-
 const PricingCards = () => {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
 
@@ -122,7 +95,7 @@ const PricingCards = () => {
                 <Card
                   key={card.id}
                   {...card}
-                  $index={index}
+                  index={index}
                   onClick={() => setSelectedCard(card.id)}
                 />
               ))}
@@ -133,7 +106,7 @@ const PricingCards = () => {
                   <Card
                     key={card.id}
                     {...card}
-                    $index={index}
+                    index={index}
                     onClick={() => setSelectedCard(card.id)}
                   />
                 ))}
@@ -174,7 +147,7 @@ interface CardProps {
   icon: React.ElementType;
   description: string;
   category: string;
-  $index: number;
+  index: number;
   onClick: () => void;
 }
 
@@ -183,14 +156,13 @@ const Card: React.FC<CardProps> = ({
   icon: Icon,
   description,
   category,
-  $index,
+  index,
   onClick,
 }) => {
   return (
     <StyledCard
       className="e-card playing"
       $category={category}
-      $index={$index}
       onClick={onClick}
     >
       <div className="wave" />
@@ -206,8 +178,60 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-const StyledCard = styled.div<{ $category: string; $index: number }>`
-  // トランジェントプロップ追加
+const Section = styled.section.attrs({ id: "pricing" })`
+  padding: 6rem 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 249, 255, 1) 100%
+  );
+`;
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+`;
+
+const Title = styled.h2`
+  ${styles.animatedGradientText}
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+`;
+
+const Subtitle = styled.p`
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 4rem;
+  font-size: 1.1rem;
+`;
+
+const Timeline = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+`;
+
+const Classification = styled.div`
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+`;
+
+const TimelineItem = styled.div`
+  display: contents;
+`;
+
+const StyledCard = styled.div<{ $category: string }>`
   cursor: pointer;
   background: transparent;
   position: relative;
@@ -231,6 +255,18 @@ const StyledCard = styled.div<{ $category: string; $index: number }>`
         : "linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb)"};
     border-radius: 40%;
     animation: wave 20s infinite linear;
+  }
+
+  .wave:nth-child(2),
+  .wave:nth-child(3) {
+    top: -50%;
+  }
+
+  .wave:nth-child(2) {
+    animation-duration: 25s;
+  }
+  .wave:nth-child(3) {
+    animation-duration: 30s;
   }
 
   @keyframes wave {
