@@ -18,7 +18,64 @@ const BREAKPOINTS = {
   lg: 1024,
 };
 
-const waveAnimation = `...省略...`; // アニメーション CSS は省略します。
+const waveAnimation = `
+@keyframes wave {
+  0% { transform: translateX(0) translateZ(0) scaleY(1) }
+  50% { transform: translateX(-25%) translateZ(0) scaleY(0.5) }
+  100% { transform: translateX(-50%) translateZ(0) scaleY(1) }
+}
+
+.wave-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50%;
+  bottom: -50%;
+  background: linear-gradient(180deg, #af40ff, #5b42f3, #00ddeb);
+  opacity: 0.2;
+  transform-origin: center center;
+  overflow: hidden;
+}
+
+.animate-wave {
+  animation: wave 10s infinite linear;
+  animation-fill-mode: forwards;
+}
+
+.wave-background::before,
+.wave-background::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: inherit;
+  opacity: 0.5;
+}
+
+.animate-wave::before {
+  animation: wave 16s infinite linear reverse;
+  animation-fill-mode: forwards;
+}
+
+.animate-wave::after {
+  animation: wave 20s infinite linear;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 640px) {
+  .wave-background {
+    top: -25%;
+    bottom: -25%;
+  }
+}
+
+.combination-tag {
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+`;
 
 const Available: React.FC = () => {
   const [ref, { width }] = useMeasure();
