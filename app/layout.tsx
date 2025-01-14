@@ -1,9 +1,5 @@
-import Providers from "./components/providers";
-
-export const metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-};
+import StyledComponentsRegistry from "./registry";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -13,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Providers>{children}</Providers>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   );
