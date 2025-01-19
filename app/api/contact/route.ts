@@ -8,12 +8,19 @@ export async function POST(request: Request) {
 
     // Create transporter
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // TLSを使用
       auth: {
-        user: "uta.3662@gmail.com",
+        user: process.env.GMAIL_USER || "uta.3662@gmail.com",
         pass: process.env.GMAIL_APP_PASSWORD,
       },
     });
+
+    // メール送信前の検証
+    if (!process.env.GMAIL_APP_PASSWORD) {
+      throw new Error("GMAIL_APP_PASSWORDが設定されていません");
+    }
 
     // Email to the company
     const companyMailOptions = {
