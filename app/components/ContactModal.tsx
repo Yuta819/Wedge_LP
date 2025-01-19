@@ -267,18 +267,29 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to send email");
+        throw new Error(data.message || "メールの送信に失敗しました");
       }
 
       alert(
         "お問い合わせを受け付けました。入力いただいたメールアドレスに確認メールをお送りしましたのでご確認ください。"
       );
+      setFormData({
+        company: "",
+        position: "",
+        name: "",
+        email: "",
+        message: "",
+      });
       onClose();
     } catch (error) {
       console.error("Error sending email:", error);
       alert(
-        "メールの送信に失敗しました。しばらく経ってから再度お試しください。"
+        error instanceof Error
+          ? error.message
+          : "メールの送信に失敗しました。しばらく経ってから再度お試しください。"
       );
     } finally {
       setIsSubmitting(false);

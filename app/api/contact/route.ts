@@ -63,7 +63,10 @@ ${message}
   } catch (error) {
     console.error("Email sending failed:", error);
     return NextResponse.json(
-      { error: "Failed to send email" },
+      {
+        error:
+          error instanceof Error ? error.message : "メール送信に失敗しました",
+      },
       { status: 500 }
     );
   }
