@@ -1,20 +1,27 @@
+"use client";
+
 import React from "react";
 import styled from "styled-components";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface RequestButtonProps {
   onClick?: () => void;
 }
 
 const RequestButton: React.FC<RequestButtonProps> = ({ onClick }) => {
+  const router = useRouter();
+
+  const handleOpenModal = () => {
+    // Use URL hash to control modal state
+    window.history.pushState(null, "", "/#modal");
+    // Trigger a hashchange event
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+  };
+
   return (
     <StyledButtonWrapper>
       <StyledButtonContainer>
-        <Link href="https://www.aaa-wedge.co.jp/contact/" passHref>
-          <StyledButton href="https://www.aaa-wedge.co.jp/contact/">
-            無料相談
-          </StyledButton>
-        </Link>
+        <StyledButton onClick={handleOpenModal}>無料相談</StyledButton>
       </StyledButtonContainer>
       <StyledWaveContainer>
         <div className="wave wave1" />

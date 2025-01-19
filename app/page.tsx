@@ -1,16 +1,17 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Available from './components/Available'
-import Solution from './components/Solution'
-import UserStories from './components/UserStories'
-import Steps from './components/Steps'
-import FAQ from './components/FAQ'
-import CTA from './components/CTA'
-import Challenges from './components/Challenges'
-import SectionCTA from './components/SectionCTA'
-import PricingCards from './components/PricingCards'
-import Footer from './components/Footer'
-import Information from './components/Information'
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Available from "./components/Available";
+import Solution from "./components/Solution";
+import UserStories from "./components/UserStories";
+import Steps from "./components/Steps";
+import FAQ from "./components/FAQ";
+import CTA from "./components/CTA";
+import Challenges from "./components/Challenges";
+import SectionCTA from "./components/SectionCTA";
+import PricingCards from "./components/PricingCards";
+import Footer from "./components/Footer";
+import Information from "./components/Information";
+import ContactModalWrapper from "./components/ContactModalWrapper";
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
       <FAQ />
       <CTA />
       <Footer />
+      <ContactModalWrapper />
     </main>
-  )
+  );
 }
-
