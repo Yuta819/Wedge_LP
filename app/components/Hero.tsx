@@ -133,10 +133,6 @@ export default function Hero() {
     return () => window.removeEventListener("resize", updateRadius);
   }, []);
 
-  const handleRequestClick = () => {
-    console.log("Request button clicked");
-  };
-
   const circularAnimations = [
     "https://lottie.host/4aa54927-f14e-4b98-af67-2b4ed8cd05d4/LlxfDjuvkv.lottie",
     "https://lottie.host/28c9112e-4204-430a-a2ee-a3b06b39a7b6/9VRcwPR3Kk.lottie",
@@ -190,7 +186,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="absolute right-4 md:right-8 top-4 md:top-8 z-50"
           >
-            <RequestButton onClick={handleRequestClick} />
+            <RequestButton />
           </motion.div>
 
           {/* Statement */}
