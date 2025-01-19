@@ -186,7 +186,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="absolute right-4 md:right-8 top-4 md:top-8 z-50"
           >
-            <RequestButton onClick={handleRequestClick} />
+            <RequestButton />
           </motion.div>
 
           {/* Statement */}
