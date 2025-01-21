@@ -31,20 +31,20 @@ export async function POST(request: Request) {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.GMAIL_USER || "uta.3662@gmail.com",
+        user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_APP_PASSWORD,
       },
     });
 
     // メール送信前の検証
-    if (!process.env.GMAIL_APP_PASSWORD) {
-      throw new Error("GMAIL_APP_PASSWORDが設定されていません");
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
+      throw new Error("メール送信に必要な環境変数が設定されていません");
     }
 
     // 会社宛のメール設定
     const companyMailOptions = {
       from: email,
-      to: "uta.3662@gmail.com",
+      to: process.env.GMAIL_USER,
       subject: "Transceiverに関するお問い合わせ",
       text: `
 無線機×インターネットによる業務改革のお問い合わせ
@@ -63,7 +63,7 @@ ${message}
 
     // お客様宛の確認メール設定
     const customerMailOptions = {
-      from: "uta.3662@gmail.com",
+      from: process.env.GMAIL_USER,
       to: email,
       subject: "お問い合わせありがとうございます",
       text: `${lastName} ${firstName} 様
