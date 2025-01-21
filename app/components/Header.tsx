@@ -101,16 +101,12 @@ const SimpleFloatingNav = ({
 }) => {
   return (
     <nav
-      className={`fixed left-[50%] top-8 flex w-[90%] max-w-5xl -translate-x-[50%] items-center justify-between rounded-lg border-[1px] ${
-        isTransparent ? "border-transparent" : "border-transparent"
-      } ${
-        isTransparent ? "bg-transparent" : "bg-white/10"
-      } p-2 text-xs sm:text-sm ${
-        isTransparent ? "backdrop-none" : "backdrop-blur-sm"
-      } shadow-md z-[110] text-black`}
+      className={`fixed left-[50%] top-8 flex w-[90%] max-w-5xl -translate-x-[50%] items-center justify-between rounded-lg bg-transparent p-2 text-xs sm:text-sm backdrop-blur-sm shadow-md z-[110] text-black`}
     >
       <Logo isTransparent={isTransparent} />
-      <div className="flex items-center justify-center flex-grow gap-6">
+      <div
+        className={`flex items-center justify-center flex-grow gap-6 transition-opacity duration-300`}
+      >
         <div className="hidden lg:flex items-center justify-center gap-6">
           <NavLink href="#features" isTransparent={isTransparent}>
             特徴
@@ -229,9 +225,7 @@ const IOSHeader = ({
 }) => {
   return (
     <motion.nav
-      className={`fixed left-4 right-4 top-4 flex items-center justify-between rounded-full border border-white/10 p-2 backdrop-blur-sm transition-colors duration-300 ${
-        isTransparent ? "bg-white/10" : "bg-white/90"
-      }`}
+      className={`fixed left-4 right-4 top-4 flex items-center justify-between rounded-full border border-white/10 p-2 backdrop-blur-sm transition-colors duration-300 bg-white/10 `}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
