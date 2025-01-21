@@ -338,12 +338,10 @@ const ContactModal: React.FC<ContactModalProps> = ({
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "メールの送信に失敗しました");
+        throw new Error(data.error || "メール送信に失敗しました");
       }
 
-      alert(
-        "お問い合わせを受け付けました。入力いただいたメールアドレスに確認メールをお送りしましたのでご確認ください。"
-      );
+      alert(data.message);
       setFormData({
         lastName: "",
         firstName: "",
@@ -358,11 +356,11 @@ const ContactModal: React.FC<ContactModalProps> = ({
       });
       onClose();
     } catch (error) {
-      console.error("Error sending email:", error);
+      // console.error("Error sending email:", error); // 開発時のデバッグ用にコメントアウト
       alert(
         error instanceof Error
           ? error.message
-          : "メールの送信に失敗しました。しばらく経ってから再度お試しください。"
+          : "メール送信に失敗しました。しばらく経ってから再度お試しください。"
       );
     } finally {
       setIsSubmitting(false);

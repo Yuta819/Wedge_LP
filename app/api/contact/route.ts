@@ -97,7 +97,6 @@ ${message}
         "お問い合わせを受け付けました。入力いただいたメールアドレスに確認メールをお送りしましたのでご確認ください。",
     });
   } catch (error) {
-    console.error("Email sending failed:", error);
     return NextResponse.json(
       {
         error:

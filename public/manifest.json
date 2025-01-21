@@ -1,0 +1,16 @@
+{
+  "name": "無線機×インターネット | Wedge",
+  "short_name": "Wedge",
+  "description": "無線機とインターネットを組み合わせた革新的なソリューション。業務効率化と生産性向上を実現する次世代の無線機システムをご提供します。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4a00e0",
+  "icons": [
+    {
+      "src": "/Wedge-logo2_1.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

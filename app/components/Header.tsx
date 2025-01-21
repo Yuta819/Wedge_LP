@@ -110,75 +110,35 @@ const SimpleFloatingNav = ({
       } shadow-md z-[110] text-black`}
     >
       <Logo isTransparent={isTransparent} />
-      <div
-        className={`flex items-center justify-center flex-grow gap-6 transition-opacity duration-300 ${
-          isOverHero ? "opacity-0" : "opacity-100"
-        }`}
-      >
+      <div className="flex items-center justify-center flex-grow gap-6">
         <div className="hidden lg:flex items-center justify-center gap-6">
-          <NavLink
-            href="#features"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#features" isTransparent={isTransparent}>
             特徴
           </NavLink>
-          <NavLink
-            href="#challenges"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#challenges" isTransparent={isTransparent}>
             解決課題
           </NavLink>
-          <NavLink
-            href="#cases"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#cases" isTransparent={isTransparent}>
             事例
           </NavLink>
-          <NavLink
-            href="#steps"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#steps" isTransparent={isTransparent}>
             導入
           </NavLink>
-          <NavLink
-            href="#pricing"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#pricing" isTransparent={isTransparent}>
             費用
           </NavLink>
-          <NavLink
-            href="#faq"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#faq" isTransparent={isTransparent}>
             FAQ
           </NavLink>
         </div>
         <div className="flex lg:hidden items-center justify-center gap-4">
-          <NavLink
-            href="#features"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#features" isTransparent={isTransparent}>
             特徴
           </NavLink>
-          <NavLink
-            href="#cases"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#cases" isTransparent={isTransparent}>
             事例
           </NavLink>
-          <NavLink
-            href="#faq"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#faq" isTransparent={isTransparent}>
             FAQ
           </NavLink>
         </div>
@@ -188,15 +148,7 @@ const SimpleFloatingNav = ({
           isOverHero ? "opacity-0" : "opacity-100"
         }`}
       >
-        <Link href="https://www.aaa-wedge.co.jp/contact/" passHref>
-          <AnimatedButton
-            onClick={() =>
-              window.open("https://www.aaa-wedge.co.jp/contact/", "_blank")
-            }
-          >
-            問い合わせ
-          </AnimatedButton>
-        </Link>
+        <AnimatedButton onClick={onOpenModal}>問い合わせ</AnimatedButton>
       </div>
     </nav>
   );
@@ -227,12 +179,10 @@ const NavLink = ({
   children,
   href,
   isTransparent,
-  isOverHero,
 }: {
   children: string;
   href: string;
   isTransparent: boolean;
-  isOverHero: boolean;
 }) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -243,13 +193,7 @@ const NavLink = ({
   };
 
   return (
-    <Link
-      href={href}
-      onClick={handleClick}
-      className={`block overflow-hidden ${
-        isOverHero ? "pointer-events-none" : ""
-      }`}
-    >
+    <Link href={href} onClick={handleClick} className="block overflow-hidden">
       <motion.div
         whileHover={{ y: -20 }}
         transition={{ ease: "backInOut", duration: 0.5 }}
@@ -303,74 +247,36 @@ const IOSHeader = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className={`flex items-center justify-center flex-grow gap-6 transition-opacity duration-300 ${
-          isOverHero ? "opacity-0" : "opacity-100"
-        }`}
+        className="flex items-center justify-center flex-grow gap-6"
       >
         <div className="hidden lg:flex items-center justify-center gap-6">
-          <NavLink
-            href="#features"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#features" isTransparent={isTransparent}>
             特徴
           </NavLink>
-          <NavLink
-            href="#challenges"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#challenges" isTransparent={isTransparent}>
             解決課題
           </NavLink>
-          <NavLink
-            href="#cases"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#cases" isTransparent={isTransparent}>
             事例
           </NavLink>
-          <NavLink
-            href="#steps"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#steps" isTransparent={isTransparent}>
             導入
           </NavLink>
-          <NavLink
-            href="#pricing"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#pricing" isTransparent={isTransparent}>
             費用
           </NavLink>
-          <NavLink
-            href="#faq"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#faq" isTransparent={isTransparent}>
             FAQ
           </NavLink>
         </div>
         <div className="flex lg:hidden items-center justify-center gap-4">
-          <NavLink
-            href="#features"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#features" isTransparent={isTransparent}>
             特徴
           </NavLink>
-          <NavLink
-            href="#cases"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#cases" isTransparent={isTransparent}>
             事例
           </NavLink>
-          <NavLink
-            href="#faq"
-            isTransparent={isTransparent}
-            isOverHero={isOverHero}
-          >
+          <NavLink href="#faq" isTransparent={isTransparent}>
             FAQ
           </NavLink>
         </div>
@@ -383,15 +289,7 @@ const IOSHeader = ({
           isOverHero ? "opacity-0" : "opacity-100"
         }`}
       >
-        <Link href="https://www.aaa-wedge.co.jp/contact/" passHref>
-          <AnimatedButton
-            onClick={() =>
-              window.open("https://www.aaa-wedge.co.jp/contact/", "_blank")
-            }
-          >
-            問い合わせ
-          </AnimatedButton>
-        </Link>
+        <AnimatedButton onClick={onOpenModal}>問い合わせ</AnimatedButton>
       </motion.div>
     </motion.nav>
   );
