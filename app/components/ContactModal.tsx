@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 interface ContactModalProps {
   isOpen: boolean;
+  initialMessage: string;
   onClose: () => void;
 }
 
@@ -24,12 +25,14 @@ const ModalOverlay = styled.div`
   background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   padding: 1rem;
+  overflow-y: auto;
 `;
 
 const ModalContent = styled.div`
   position: relative;
   width: 100%;
   max-width: 32rem;
+  margin: 2rem auto;
   @media (min-width: 640px) {
     max-width: 36rem;
   }
@@ -46,6 +49,26 @@ const GlassCard = styled.div`
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(74, 0, 224, 0.2);
+    border-radius: 4px;
+
+    &:hover {
+      background: rgba(74, 0, 224, 0.3);
+    }
+  }
 `;
 
 const DecorativeShape = styled.div`
@@ -111,9 +134,12 @@ const FormGrid = styled.div`
 
 const FormField = styled.div`
   @media (min-width: 640px) {
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(5) {
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(9),
+    &:nth-child(10) {
       grid-column: span 2;
     }
   }
@@ -234,15 +260,57 @@ const Button = styled.button<{ $primary?: string }>`
   `}
 `;
 
-const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+const FormDescription = styled.p`
+  color: #4a00e0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+`;
+
+const PhoneInfo = styled.p`
+  color: #4a00e0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+  text-align: center;
+`;
+
+const ContactModal: React.FC<ContactModalProps> = ({
+  isOpen,
+  initialMessage,
+  onClose,
+}) => {
   const [formData, setFormData] = useState({
+    lastName: "",
+    firstName: "",
+    lastNameKana: "",
+    firstNameKana: "",
     company: "",
-    position: "",
-    name: "",
+    prefecture: "",
     email: "",
-    message: "",
+    emailConfirm: "",
+    phone: "",
+    message: initialMessage,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      message: initialMessage,
+    }));
+  }, [initialMessage]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -277,10 +345,15 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         "お問い合わせを受け付けました。入力いただいたメールアドレスに確認メールをお送りしましたのでご確認ください。"
       );
       setFormData({
+        lastName: "",
+        firstName: "",
+        lastNameKana: "",
+        firstNameKana: "",
         company: "",
-        position: "",
-        name: "",
+        prefecture: "",
         email: "",
+        emailConfirm: "",
+        phone: "",
         message: "",
       });
       onClose();
@@ -296,6 +369,56 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
+  const prefectures = [
+    "北海道",
+    "青森県",
+    "岩手県",
+    "宮城県",
+    "秋田県",
+    "山形県",
+    "福島県",
+    "茨城県",
+    "栃木県",
+    "群馬県",
+    "埼玉県",
+    "千葉県",
+    "東京都",
+    "神奈川県",
+    "新潟県",
+    "富山県",
+    "石川県",
+    "福井県",
+    "山梨県",
+    "長野県",
+    "岐阜県",
+    "静岡県",
+    "愛知県",
+    "三重県",
+    "滋賀県",
+    "京都府",
+    "大阪府",
+    "兵庫県",
+    "奈良県",
+    "和歌山県",
+    "鳥取県",
+    "島根県",
+    "岡山県",
+    "広島県",
+    "山口県",
+    "徳島県",
+    "香川県",
+    "愛媛県",
+    "高知県",
+    "福岡県",
+    "佐賀県",
+    "長崎県",
+    "熊本県",
+    "大分県",
+    "宮崎県",
+    "鹿児島県",
+    "沖縄県",
+  ];
+
   if (!isOpen) return null;
 
   return (
@@ -306,64 +429,129 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           <DecorativeShape />
           <ContentWrapper>
             <Title>お問い合わせ</Title>
+            <FormDescription>
+              お問合せについては、下記フォーマットにご自由にご記入ください。弊社よりご連絡をさせていただきます。
+              <br />
+              このフォームで収集した個人情報は、お問合せの回答のためにのみ使用させていただきます。
+            </FormDescription>
             <form onSubmit={handleSubmit}>
               <FormGrid>
                 <FormField>
-                  <Label htmlFor="company">企業名</Label>
+                  <Label htmlFor="lastName">姓 *</Label>
+                  <Input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                  />
+                </FormField>
+                <FormField>
+                  <Label htmlFor="firstName">名 *</Label>
+                  <Input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                  />
+                </FormField>
+                <FormField>
+                  <Label htmlFor="lastNameKana">セイ *</Label>
+                  <Input
+                    type="text"
+                    id="lastNameKana"
+                    name="lastNameKana"
+                    value={formData.lastNameKana}
+                    onChange={handleChange}
+                    required
+                  />
+                </FormField>
+                <FormField>
+                  <Label htmlFor="firstNameKana">メイ *</Label>
+                  <Input
+                    type="text"
+                    id="firstNameKana"
+                    name="firstNameKana"
+                    value={formData.firstNameKana}
+                    onChange={handleChange}
+                    required
+                  />
+                </FormField>
+                <FormField>
+                  <Label htmlFor="company">会社名 *</Label>
                   <Input
                     type="text"
                     id="company"
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    placeholder="株式会社トランシーバー"
+                    placeholder="ウェッジ株式会社"
                     required
                   />
                 </FormField>
                 <FormField>
-                  <Label htmlFor="position">役職</Label>
-                  <Input
-                    type="text"
-                    id="position"
-                    name="position"
-                    value={formData.position}
+                  <Label htmlFor="prefecture">都道府県 *</Label>
+                  <select
+                    id="prefecture"
+                    name="prefecture"
+                    value={formData.prefecture}
                     onChange={handleChange}
-                    placeholder="マネージャー"
                     required
-                  />
+                    className="w-full p-3 rounded-lg bg-white/50 border border-purple-300/30"
+                  >
+                    <option value="">選択してください</option>
+                    {prefectures.map((pref) => (
+                      <option key={pref} value={pref}>
+                        {pref}
+                      </option>
+                    ))}
+                  </select>
                 </FormField>
                 <FormField>
-                  <Label htmlFor="name">お名前</Label>
-                  <Input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="山田 太郎"
-                    required
-                  />
-                </FormField>
-                <FormField>
-                  <Label htmlFor="email">メールアドレス</Label>
+                  <Label htmlFor="email">メールアドレス *</Label>
                   <Input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="yamada@example.com"
+                    placeholder="example@co.jp"
                     required
                   />
                 </FormField>
                 <FormField>
-                  <Label htmlFor="message">ご相談内容</Label>
+                  <Label htmlFor="emailConfirm">メールアドレス(確認) *</Label>
+                  <Input
+                    type="email"
+                    id="emailConfirm"
+                    name="emailConfirm"
+                    value={formData.emailConfirm}
+                    onChange={handleChange}
+                    placeholder="上記と同じアドレスを入力"
+                    required
+                  />
+                </FormField>
+                <FormField>
+                  <Label htmlFor="phone">電話番号</Label>
+                  <Input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="012-3456-7890"
+                  />
+                </FormField>
+                <FormField>
+                  <Label htmlFor="message">お問い合わせ内容</Label>
                   <TextArea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="ご相談内容をご記入ください"
                     required
                   />
                 </FormField>
@@ -377,6 +565,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 </Button>
               </ButtonGroup>
             </form>
+            <PhoneInfo>
+              お電話でのお問い合わせ：0120-248-144
+              <br />
+              （受付時間：平日9：15～12：00、13：00～18：00）
+            </PhoneInfo>
           </ContentWrapper>
         </GlassCard>
       </ModalContent>

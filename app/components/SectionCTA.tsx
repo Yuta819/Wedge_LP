@@ -129,6 +129,12 @@ interface SectionCTAProps {
 }
 
 export default function SectionCTA({ title }: SectionCTAProps) {
+  const handleOpenModal = (type: "資料請求" | "メール相談") => {
+    // URLのハッシュを設定し、クエリパラメータでタイプを渡す
+    window.history.pushState(null, "", `/#modal?type=${type}`);
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+  };
+
   return (
     <CTASection>
       <FloatingLight />
@@ -139,26 +145,14 @@ export default function SectionCTA({ title }: SectionCTAProps) {
             {title}
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Link
-              href="https://www.aaa-wedge.co.jp/contact/"
-              passHref
-              legacyBehavior
-            >
-              <StyledButton>
-                <FileText className="mr-2 h-5 w-5" />
-                資料請求
-              </StyledButton>
-            </Link>
-            <Link
-              href="https://www.aaa-wedge.co.jp/contact/"
-              passHref
-              legacyBehavior
-            >
-              <StyledButton>
-                <Mail className="mr-2 h-5 w-5" />
-                メールで相談
-              </StyledButton>
-            </Link>
+            <StyledButton onClick={() => handleOpenModal("資料請求")}>
+              <FileText className="mr-2 h-5 w-5" />
+              資料請求
+            </StyledButton>
+            <StyledButton onClick={() => handleOpenModal("メール相談")}>
+              <Mail className="mr-2 h-5 w-5" />
+              メールで相談
+            </StyledButton>
           </div>
         </div>
       </div>
