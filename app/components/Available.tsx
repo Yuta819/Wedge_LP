@@ -118,10 +118,13 @@ const Available: React.FC = () => {
             トランシーバーの新たな可能性
           </h2>
           <p className="text-center text-lg sm:text-xl text-slate-500 mb-2 sm:mb-3">
+            インカム・トランシーバー・無線機×ネットワーク
+          </p>
+          <p className="text-center text-lg sm:text-xl text-slate-500 mb-8 sm:mb-12">
             ネットワークを介してあらゆるツール/システムと連携可能に。
           </p>
           <p className="text-center text-lg sm:text-xl text-slate-500 mb-8 sm:mb-12">
-            通信から業務改善＆人件費削減
+            通信を軸として、業務改善＆人件費削減
           </p>
         </motion.div>
       </div>

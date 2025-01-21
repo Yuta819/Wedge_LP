@@ -4,43 +4,38 @@ import React, { useState } from "react";
 import styles from "./Available.module.css";
 import ChallengeCard from "./ChallengeCard";
 import {
-  FaHardHat,
+  FaSchool,
   FaHandHoldingHeart,
   FaUserNurse,
-  FaUtensils,
+  FaCar,
   FaBed,
 } from "react-icons/fa";
-import { constructionChallenges } from "../data/constructionChallenges";
+import { schoolChallenges } from "../data/schoolChallenges";
 import { careChallenges } from "../data/careChallenges";
 import { nursingChallenges } from "../data/nursingChallenges";
-import { restaurantChallenges } from "../data/restaurantChallenges";
+import { cardealerChallenges } from "../data/cardealerChallenges";
 import { hotelChallenges } from "../data/hotelChallenges";
 import { IconType } from "react-icons";
 
 // Industry-specific challenge data
 const industryData = {
-  construction: constructionChallenges,
+  school: schoolChallenges,
   care: careChallenges,
   nursing: nursingChallenges,
-  restaurant: restaurantChallenges,
+  cardealer: cardealerChallenges,
   hotel: hotelChallenges,
 };
 
 const industries: { id: IndustryType; name: string; icon: IconType }[] = [
-  { id: "construction", name: "建設", icon: FaHardHat },
+  { id: "school", name: "学校", icon: FaSchool },
   { id: "care", name: "介護", icon: FaHandHoldingHeart },
   { id: "nursing", name: "看護", icon: FaUserNurse },
-  { id: "restaurant", name: "飲食", icon: FaUtensils },
+  { id: "cardealer", name: "ディーラー", icon: FaCar },
   { id: "hotel", name: "宿泊", icon: FaBed },
 ];
 
 // 型定義を追加
-type IndustryType =
-  | "construction"
-  | "care"
-  | "nursing"
-  | "restaurant"
-  | "hotel";
+type IndustryType = "school" | "care" | "nursing" | "cardealer" | "hotel";
 
 const Challenges: React.FC = () => {
   // useState に型を追加
@@ -57,19 +52,21 @@ const Challenges: React.FC = () => {
         >
           こんな課題を持つ事業所におすすめ
         </h2>
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {industries.map((industry) => (
             <button
               key={industry.id}
               onClick={() => setCurrentIndustry(industry.id)}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-full ${
+              className={`flex flex-col items-center sm:flex-row sm:space-x-2 px-4 py-2 rounded-full min-w-[100px] ${
                 currentIndustry === industry.id
                   ? "bg-blue-600 text-white"
                   : "bg-gray-200 text-gray-800"
               }`}
             >
-              <industry.icon />
-              <span>{industry.name}</span>
+              <industry.icon className="mb-1 sm:mb-0" />
+              <span className="whitespace-nowrap text-sm sm:text-base">
+                {industry.name}
+              </span>
             </button>
           ))}
         </div>
@@ -94,6 +91,13 @@ const Challenges: React.FC = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="container mx-auto">
+        <h2
+          className={`${styles.animatedGradientText} text-3xl font-bold mb-6 sm:mb-8 text-center mt-16`}
+        >
+          これらの業種とお取引のある法人様、「紹介代理店」や「販売代理店」としての協業を募集しております。
+        </h2>
       </div>
     </section>
   );

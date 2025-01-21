@@ -34,14 +34,21 @@ const steps = [
   {
     title: "カスタマイズと見積",
     description:
-      "デモの結果を踏まえ、より貴社のビジネスを効率化するべくカスタマイズを行います。ご予算に合わせて最も効果の得られる導入の形を一緒に考え、最終見積を提示いたします。",
+      "デモの結果を踏まえ、貴社の業務を効率化するべくカスタマイズを行います。ご予算に合わせて最も効果の高い導入の形を一緒に考え、最終見積を提示いたします。",
     animation:
       "https://lottie.host/224d059a-fa56-4f23-9488-d5e30dbc77b5/vW1hB1HAZU.lottie",
   },
   {
+    title: "設計・設定・導入管理",
+    description:
+      "最終お見積の仕様に基づき、エンジニアが設計・設定を行い、導入完了までの管理を行います。",
+    animation:
+      "https://lottie.host/175406c1-dbf0-4edc-b1a2-eb8223b55bb4/wva4Y9VzpR.lottie",
+  },
+  {
     title: "実運用開始",
     description:
-      "ご発注頂いた段階で無線機のセッティングを行い、いよいよ実運用がスタートします。専門技術者が迅速に設計・設定・導入管理を行います。",
+      "担当者及びエンジニアが速やかな実運用を伴走させていただきます。",
     animation:
       "https://lottie.host/a50031e1-7bca-47fe-977e-dec1ddc2a696/bPmQoi0cXR.lottie",
   },
@@ -97,7 +104,7 @@ export default function Steps() {
           </div>
           <div className="mt-12 text-center">
             <p className="text-xl mb-4">
-              カジュアルにお話しだけ聞いてみたいという方も大歓迎です！
+              課題解決ではなく、情報収集等でカジュアルにお話しだけ聞いてみたいという方も大歓迎です！
             </p>
           </div>
         </div>

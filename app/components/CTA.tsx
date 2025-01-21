@@ -1,10 +1,8 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { Mail, FileText } from "lucide-react";
 import styled from "styled-components";
-import Link from "next/link";
 
 const CTASection = styled.section`
   position: relative;
@@ -251,10 +249,8 @@ export default function CTA() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center relative z-10">
           <div className="space-y-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-tight tracking-tight mb-6">
-              無料で資料請求、
-              <br />
-              どんなご相談でもお聞かせください。
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-normal text-white leading-tight tracking-tight mb-6">
+              どんなご相談でもお聞かせ下さい
             </h2>
             <div className="flex flex-col sm:flex-row gap-4">
               <StyledButton onClick={() => handleOpenModal("資料請求")}>
@@ -281,9 +277,7 @@ export default function CTA() {
                 >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>
-                  導入事例と具体的な業務改善効果の詳細データをご確認いただけます
-                </span>
+                <span>受付の人員を削減し、より重要な業務に人員を割きたい</span>
               </CheckItem>
               <CheckItem>
                 <svg
@@ -297,7 +291,7 @@ export default function CTA() {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span>
-                  業界別の活用方法と期待できる効果の具体例をご紹介します
+                  従業員間の連携を強化し、より良いサービスを提供したい
                 </span>
               </CheckItem>
               <CheckItem>
@@ -311,9 +305,7 @@ export default function CTA() {
                 >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>
-                  導入までの流れと初期費用・運用コストの詳細が分かります
-                </span>
+                <span>従業員のストレス軽減や安全管理を強化したい</span>
               </CheckItem>
               <CheckItem>
                 <svg
@@ -326,9 +318,7 @@ export default function CTA() {
                 >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span>
-                  製品仕様と対応可能なカスタマイズの範囲をご確認いただけます
-                </span>
+                <span>顧客満足度向上やオペレーション効率化を実現したい</span>
               </CheckItem>
             </ul>
           </div>

@@ -22,7 +22,7 @@ export default function Home() {
       <Available />
       <SectionCTA title="新たな無線機の可能性を体験してみませんか？" />
       <Solution />
-      <SectionCTA title="業務効率化の第一歩を踏み出しましょう" />
+      <SectionCTA title="業務効率化への第一歩はここにあります" />
       <Challenges />
       <SectionCTA title="あなたの課題、新しい無線機で解決できます" />
       <UserStories />
