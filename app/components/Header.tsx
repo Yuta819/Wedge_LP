@@ -26,7 +26,6 @@ const isIOS = () => {
 export default function Header() {
   const [isTransparent, setIsTransparent] = useState(true);
   const [isOverHero, setIsOverHero] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isIOSDevice, setIsIOSDevice] = useState(false);
   const router = useRouter();
 
@@ -44,26 +43,11 @@ export default function Header() {
 
   useEffect(() => {
     setIsIOSDevice(isIOS());
-
-    const checkHash = () => {
-      setIsModalOpen(window.location.hash === "#modal");
-    };
-
-    checkHash(); // 初期チェック
-    window.addEventListener("hashchange", checkHash);
-
-    return () => {
-      window.removeEventListener("hashchange", checkHash);
-    };
   }, []);
 
   const handleOpenModal = () => {
     window.history.pushState(null, "", "/#modal");
-    setIsModalOpen(true);
-  };
-  const handleCloseModal = () => {
-    window.history.pushState(null, "", "/");
-    setIsModalOpen(false);
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
   };
 
   return (
