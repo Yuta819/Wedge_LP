@@ -125,7 +125,7 @@ const FloatingLight = styled.div`
   }
 `;
 
-const StyledButton = styled.div`
+const StyledButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;

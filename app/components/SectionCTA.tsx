@@ -6,9 +6,7 @@ import styled from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
 import Link from "next/link";
 
-const CTASection = styled("section", {
-  shouldForwardProp: isPropValid,
-})`
+const CTASection = styled.section`
   position: relative;
   overflow: hidden;
   padding: 3rem 0;
@@ -29,9 +27,7 @@ const CTASection = styled("section", {
   }
 `;
 
-const GlowEffect = styled("div", {
-  shouldForwardProp: isPropValid,
-})`
+const GlowEffect = styled.div`
   position: absolute;
   bottom: -100px;
   left: 50%;
@@ -59,9 +55,7 @@ const GlowEffect = styled("div", {
   }
 `;
 
-const FloatingLight = styled("div", {
-  shouldForwardProp: isPropValid,
-})`
+const FloatingLight = styled.div`
   position: absolute;
   width: 100px;
   height: 100px;
@@ -99,9 +93,7 @@ const FloatingLight = styled("div", {
   }
 `;
 
-const StyledButton = styled("div", {
-  shouldForwardProp: isPropValid,
-})`
+const StyledButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
