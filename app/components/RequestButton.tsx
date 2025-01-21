@@ -8,7 +8,7 @@ interface RequestButtonProps {
   onClick?: () => void;
 }
 
-const RequestButton: React.FC<RequestButtonProps> = ({ onClick }) => {
+const RequestButton: React.FC<RequestButtonProps> = () => {
   const router = useRouter();
 
   const handleOpenModal = () => {
