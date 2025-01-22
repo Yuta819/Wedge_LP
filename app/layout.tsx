@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     images: ["/wedge-og-image.png"],
   },
   icons: {
-    icon: [{ url: "/Wedge-logo2_1.ico" }],
-    shortcut: [{ url: "/Wedge-logo2_1.ico" }],
-    apple: [{ url: "/Wedge-logo2_1.ico" }],
+    icon: [{ url: "/Wedge_logo2_1.ico" }],
+    shortcut: [{ url: "/Wedge_logo2_1.ico" }],
+    apple: [{ url: "/Wedge_logo2_1.ico" }],
     other: [
       {
         rel: "apple-touch-icon-precomposed",
-        url: "/Wedge-logo2_1.ico",
+        url: "/Wedge_logo2_1.ico",
       },
     ],
   },

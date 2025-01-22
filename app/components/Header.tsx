@@ -140,7 +140,7 @@ const Logo = ({ isTransparent }: { isTransparent: boolean }) => {
       rel="noopener noreferrer"
     >
       <Image
-        src="/wedge_logo.webp"
+        src="/Wedge_logo.webp"
         alt="トランシーバー"
         width={100}
         height={25}
