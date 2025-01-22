@@ -7,57 +7,49 @@ const steps = [
   {
     title: "ヒアリング＆初回面談",
     description: "専門スタッフが丁寧にご要望をヒアリング致します。",
-    animation:
-      "https://lottie.host/cd107020-a40a-4875-a988-31b614a6fc2e/l1vWvH8JdH.lottie",
+    animation: "/Lottiejson/Step1.lottie",
   },
   {
     title: "初回提案",
     description:
       "どのような業務が削減可能か、どんな付加価値が創出可能か、とことん寄り添い考え抜きます。",
-    animation:
-      "https://lottie.host/b37f4081-3410-48c5-83d6-74ef50da7110/EkitBMua1O.lottie",
+    animation: "/Lottiejson/Step2.lottie",
   },
   {
     title: "二次面談",
     description:
       "概算費用の提示と共に、導入の費用対効果を担当が一緒に考え抜き、本当の満足を追求します。",
-    animation:
-      "https://lottie.host/fa3cc07c-b9fb-451f-aa18-7286b93c51e1/25FVzWGWRC.lottie",
+    animation: "/Lottiejson/Step3.lottie",
   },
   {
     title: "デモの実施",
     description:
       "最も効果を実感頂ける機能に集中し、変化を体験していただきます。",
-    animation:
-      "https://lottie.host/9599a53d-2fb8-4a3e-9ade-590af537f394/8sWk1aSI75.lottie",
+    animation: "/Lottiejson/Step4.lottie",
   },
   {
     title: "カスタマイズと見積",
     description:
       "デモの結果を踏まえ、貴社の業務を効率化するべくカスタマイズを行います。ご予算に合わせて最も効果の高い導入の形を一緒に考え、最終見積を提示いたします。",
-    animation:
-      "https://lottie.host/224d059a-fa56-4f23-9488-d5e30dbc77b5/vW1hB1HAZU.lottie",
+    animation: "/Lottiejson/Step5.lottie",
   },
   {
     title: "設計・設定・導入管理",
     description:
       "最終お見積の仕様に基づき、エンジニアが設計・設定を行い、導入完了までの管理を行います。",
-    animation:
-      "https://lottie.host/175406c1-dbf0-4edc-b1a2-eb8223b55bb4/wva4Y9VzpR.lottie",
+    animation: "/Lottiejson/Step6.lottie",
   },
   {
     title: "実運用開始",
     description:
       "担当者及びエンジニアが速やかな実運用を伴走させていただきます。",
-    animation:
-      "https://lottie.host/a50031e1-7bca-47fe-977e-dec1ddc2a696/bPmQoi0cXR.lottie",
+    animation: "/Lottiejson/Step7.lottie",
   },
   {
     title: "アフターサポート",
     description:
       "担当が保守管理をメインに行いつつ、定期的にご状況をお伺いし、スムーズな運用と使い道の発展をサポート致します。",
-    animation:
-      "https://lottie.host/68a68c51-cfe5-46e3-b658-8aa8cee90c20/5lIg6FC5P0.lottie",
+    animation: "/Lottiejson/Step8.lottie",
   },
 ];
 

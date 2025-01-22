@@ -133,12 +133,12 @@ export default function Hero() {
   }, []);
 
   const circularAnimations = [
-    "https://lottie.host/4aa54927-f14e-4b98-af67-2b4ed8cd05d4/LlxfDjuvkv.lottie",
-    "https://lottie.host/28c9112e-4204-430a-a2ee-a3b06b39a7b6/9VRcwPR3Kk.lottie",
-    "https://lottie.host/c7ce75d9-0d28-4de2-b448-1a84d144fd34/YlP53okm8o.lottie",
-    "https://lottie.host/c00000e2-2def-43e8-8183-7fb0e574947d/uzs4kK78Y2.lottie",
-    "https://lottie.host/9f67aefb-2461-42b9-ae1f-cac67a32c919/MvT7J1cENj.lottie",
-    "https://lottie.host/9bd2e1db-9cb0-440e-903a-64ef27236f2e/Tz3YHehhX2.lottie",
+    "/Lottiejson/Notification.lottie",
+    "/Lottiejson/Microphone.lottie",
+    "/Lottiejson/Computer.lottie",
+    "/Lottiejson/IDcard.lottie",
+    "/Lottiejson/AiSetting.lottie",
+    "/Lottiejson/Call.lottie",
   ];
 
   return (
@@ -147,7 +147,7 @@ export default function Hero() {
         <div className="col-span-12 md:col-span-7 relative overflow-visible h-[50vh] md:h-screen">
           <div className="absolute inset-0 z-30 flex items-center justify-center">
             <DotLottieReact
-              src="https://lottie.host/671f1bfa-3089-482a-99ac-842fad4cdee5/muU6xpWZXb.lottie"
+              src="/Lottiejson/Walkie-talkie.lottie"
               loop
               autoplay
               className="w-full h-full md:w-4/5 md:h-4/5 lg:w-2/3 lg:h-2/3"

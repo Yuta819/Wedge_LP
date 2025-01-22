@@ -12,22 +12,19 @@ const SOLUTION_ITEMS = [
     title: "アイデア次第で何とでもつながる",
     description:
       "ありとあらゆるものと連携し、その場にいながら、各種情報を取得することが出来る総合的なオペレーションを実現します。",
-    animation:
-      "https://lottie.host/db29d593-37ac-4e8e-b21f-f1925159431b/oSSNw30AA6.lottie",
+    animation: "/Lottiejson/Wifi.lottie",
   },
   {
     title: "柔軟な働き方をサポート",
     description:
       "固定電話や各種センサーとの連携で、どこからでも対応が可能となり、場所を選ばないオペレーションと環境を構築します。",
-    animation:
-      "https://lottie.host/8872f096-47f9-47d9-82de-e75dab8e540d/c3f9nhsdsI.lottie",
+    animation: "/Lottiejson/Bag.lottie",
   },
   {
     title: "業務効率化とコスト削減（省力化、省人化）",
     description:
       "何とでもつながることで、ルーティン業務の効率化（移動距離、移動時間）が目に見えて変わります。「その場所」に必ず人がいなくてもいいという人員配置の最適化でコストを削減します。",
-    animation:
-      "https://lottie.host/a1b7ad48-abf5-4592-86a0-5dcefd4ff31f/mhbQohYqpe.lottie",
+    animation: "/Lottiejson/Growth.lottie",
   },
 ];
 
