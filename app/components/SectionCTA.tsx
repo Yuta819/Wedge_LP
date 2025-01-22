@@ -3,8 +3,6 @@
 import React from "react";
 import { FileText, Mail } from "lucide-react";
 import styled from "styled-components";
-import isPropValid from "@emotion/is-prop-valid";
-import Link from "next/link";
 
 const CTASection = styled.section`
   position: relative;
@@ -122,7 +120,6 @@ interface SectionCTAProps {
 
 export default function SectionCTA({ title }: SectionCTAProps) {
   const handleOpenModal = (type: "資料請求" | "メール相談") => {
-    // URLのハッシュを設定し、クエリパラメータでタイプを渡す
     window.history.pushState(null, "", `/#modal?type=${type}`);
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   };

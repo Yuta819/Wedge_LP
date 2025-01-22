@@ -7,7 +7,6 @@ const Footer = () => {
     <footer className="bg-[#1a1a1a] text-white flex flex-col min-h-screen">
       <div className="flex-grow container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {/* Products Column */}
           <div>
             <h3 className="text-white font-semibold mb-1">商品を選ぶ</h3>
             <p className="text-[#af40ff] text-xs mb-4">PRODUCTS</p>
@@ -71,7 +70,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Service Column */}
           <div>
             <h3 className="text-white font-semibold mb-1">サービス一覧</h3>
             <p className="text-[#af40ff] text-xs mb-4">SERVICE</p>
@@ -164,7 +162,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* About Tranceiver Column */}
           <div>
             <h3 className="text-white font-semibold mb-1">
               インカム・トランシーバー・無線機について
@@ -285,7 +282,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Recruit & Company Column */}
           <div>
             <div className="mb-8">
               <h3 className="text-white font-semibold mb-1">採用情報</h3>
@@ -381,7 +377,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact & Other Links Column */}
           <div>
             <h3 className="text-white font-semibold mb-1">お問い合わせ</h3>
             <p className="text-[#af40ff] text-xs mb-4">CONTACT</p>

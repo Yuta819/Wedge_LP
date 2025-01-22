@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import useMeasure from "react-use-measure";
@@ -89,7 +89,6 @@ const Available: React.FC = () => {
   const CAN_SHIFT_RIGHT =
     Math.abs(offset) < CARD_SIZE * (availableItems.length - CARD_BUFFER);
 
-  // PCサイズの時の中央寄せ用のオフセット計算
   const centerOffset =
     width > BREAKPOINTS.lg
       ? (width - (CARD_WIDTH + MARGIN) * availableItems.length) / 2
@@ -146,7 +145,6 @@ const Available: React.FC = () => {
             ))}
           </motion.div>
 
-          {/* Navigation Buttons - PCサイズでは非表示 */}
           {width <= BREAKPOINTS.lg && (
             <>
               <motion.button

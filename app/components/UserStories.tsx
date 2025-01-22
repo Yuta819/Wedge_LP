@@ -2,7 +2,6 @@
 
 import { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
-import { IconType } from "react-icons";
 import { testimonials, Testimonial } from "../data/testimonials";
 
 const UserStories = () => {

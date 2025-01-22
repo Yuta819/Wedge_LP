@@ -356,7 +356,6 @@ const ContactModal: React.FC<ContactModalProps> = ({
       });
       onClose();
     } catch (error) {
-      // console.error("Error sending email:", error); // 開発時のデバッグ用にコメントアウト
       alert(
         error instanceof Error
           ? error.message

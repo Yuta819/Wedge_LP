@@ -17,7 +17,6 @@ import { cardealerChallenges } from "../data/cardealerChallenges";
 import { hotelChallenges } from "../data/hotelChallenges";
 import { IconType } from "react-icons";
 
-// Industry-specific challenge data
 const industryData = {
   school: schoolChallenges,
   care: careChallenges,
@@ -34,11 +33,9 @@ const industries: { id: IndustryType; name: string; icon: IconType }[] = [
   { id: "cardealer", name: "ディーラー", icon: FaCar },
 ];
 
-// 型定義を追加
 type IndustryType = "school" | "care" | "nursing" | "cardealer" | "hotel";
 
 const Challenges: React.FC = () => {
-  // useState に型を追加
   const [currentIndustry, setCurrentIndustry] = useState<IndustryType>("care");
 
   return (

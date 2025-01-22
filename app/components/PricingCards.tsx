@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import styles from "./Available.module.css";
 
-// カードデータ
 const cards = [
   {
     id: "design",

@@ -113,12 +113,7 @@ const StyledWrapper = styled.div`
 const Button: FC = () => {
   return (
     <StyledWrapper>
-      <button
-        className="fancy"
-        onClick={() => {
-          // ここで Router.push() などを呼んで遷移する、あるいは外部リンクを開くなど
-        }}
-      >
+      <button className="fancy" onClick={() => {}}>
         <span className="top-key" />
         <span className="text">解決策を見る</span>
         <span className="bottom-key-1" />

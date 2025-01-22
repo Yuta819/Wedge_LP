@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-// import ContactModal from "./ContactModal";
 import AnimatedButton from "./AnimatedButton";
 import { useRouter } from "next/navigation";
 
@@ -18,7 +17,6 @@ const isIOS = () => {
       "iPhone",
       "iPod",
     ].includes(navigator.platform) ||
-    // iPad on iOS 13 detection
     (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   );
 };
@@ -69,7 +67,6 @@ export default function Header() {
           onOpenModal={handleOpenModal}
         />
       )}
-      {/* <ContactModal isOpen={isModalOpen} onClose={handleCloseModal} /> */}
     </header>
   );
 }

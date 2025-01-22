@@ -36,13 +36,4 @@ export const availableItems: ItemType[] = [
       "https://lottie.host/9fe1a2bf-cc72-418f-b136-65187de7e5be/kv1ixbk0Dt.lottie",
     combination: "無線機×センサー",
   },
-  // {
-  //   id: 4,
-  //   title: "情報伝達ツールの利便性向上",
-  //   description:
-  //     "販促放送の遠隔操作や災害時の避難放送や災害状況の伝達など、放送設備の下に行かずとも、現場から各自の裁量で即時放送が可能",
-  //   animation:
-  //     "https://lottie.host/2096f85d-ccb6-47f4-8fb7-53e5768183a0/nwYruLTr5L.lottie",
-  //   combination: "無線機×放送機器",
-  // },
 ];

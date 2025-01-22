@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import RequestButton from "./RequestButton";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
@@ -38,7 +37,7 @@ const StyledLoader = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-    animation: spin_4991 14s infinite; // アニメーション時間を14秒に変更
+    animation: spin_4991 14s infinite;
     font-weight: 300;
   }
 
@@ -123,7 +122,7 @@ export default function Hero() {
     const updateRadius = () => {
       if (heroRef.current) {
         const { width, height } = heroRef.current.getBoundingClientRect();
-        const newRadius = Math.min(width, height) * 0.25; // Adjust this factor to change the circle size
+        const newRadius = Math.min(width, height) * 0.25;
         setRadius(newRadius);
       }
     };
@@ -145,9 +144,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden" ref={heroRef}>
       <div className="relative grid h-auto min-h-screen grid-cols-1 md:grid-cols-12 gap-4 z-10 overflow-visible">
-        {/* Left side images */}
         <div className="col-span-12 md:col-span-7 relative overflow-visible h-[50vh] md:h-screen">
-          {/* Main animation */}
           <div className="absolute inset-0 z-30 flex items-center justify-center">
             <DotLottieReact
               src="https://lottie.host/671f1bfa-3089-482a-99ac-842fad4cdee5/muU6xpWZXb.lottie"
@@ -157,7 +154,6 @@ export default function Hero() {
               style={{ zIndex: 21 }}
             />
           </div>
-          {/* Circular animations */}
           {circularAnimations.map((src, index) => (
             <CircularAnimation
               key={index}
@@ -176,10 +172,7 @@ export default function Hero() {
             </CircularAnimation>
           ))}
         </div>
-
-        {/* Right side content */}
         <div className="col-span-12 md:col-span-5 relative p-4 md:p-8 flex flex-col justify-end h-[50vh] md:h-screen">
-          {/* Request Button */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -188,8 +181,6 @@ export default function Hero() {
           >
             <RequestButton />
           </motion.div>
-
-          {/* Statement */}
           <div className="z-20 bg-transparent mb-8 md:mb-0">
             <div className="space-y-4 md:space-y-6 lg:space-y-8">
               <div>

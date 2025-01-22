@@ -12,9 +12,7 @@ const RequestButton: React.FC<RequestButtonProps> = () => {
   const router = useRouter();
 
   const handleOpenModal = () => {
-    // Use URL hash to control modal state
     window.history.pushState(null, "", "/#modal");
-    // Trigger a hashchange event
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   };
 

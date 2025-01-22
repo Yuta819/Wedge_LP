@@ -52,11 +52,4 @@ export const testimonials: Testimonial[] = [
     name: "カーディーラー",
     title: "店長",
   },
-  // {
-  //   Icon: FaUtensils,
-  //   description:
-  //     "キッチンとホールのコミュニケーションが改善され、料理の提供時間が短縮されました。お客様の待ち時間が減少し、回転率が20%向上しています。",
-  //   name: "中村 誠",
-  //   title: "オーナーシェフ, レストランサクラ",
-  // },
 ];
