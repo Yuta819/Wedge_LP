@@ -13,7 +13,7 @@ export const availableItems: ItemType[] = [
     id: 1,
     title: "情報伝達ツールとしての更なる利便性の向上",
     description:
-      "電話（外線・内線）との融合、インターフォンや館内放送設備との連携で、「場所」にいかなくても、現場から各自の裁量で即時連絡や放送が可能に。",
+      "電話（外線・内線）との融合、インターホンや館内放送設備との連携で、「場所」にいかなくても、現場から各自の裁量で即時連絡や放送が可能に。",
     animation:
       "https://lottie.host/b2d147ca-1103-499a-aa4e-c1d2c3c58899/NWgf2X1iIn.lottie",
     combination: "無線機×電話/放送設備",

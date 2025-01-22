@@ -18,7 +18,7 @@ const UserStories = () => {
           お客様の声
         </h3>
         <p className="text-slate-500 my-4">
-          様々な業界のお客様にTransceiverをご利用いただいています。
+          様々な業界のお客様にトランシーバーをご利用いただいています。
           導入後の効果や感想をご紹介します。
         </p>
         <SelectBtns

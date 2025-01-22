@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     const companyMailOptions = {
       from: email,
       to: process.env.GMAIL_USER,
-      subject: "Transceiverに関するお問い合わせ",
+      subject: "無線機×インターネットに関するお問い合わせ",
       text: `
 無線機×インターネットによる業務改革のお問い合わせ
 

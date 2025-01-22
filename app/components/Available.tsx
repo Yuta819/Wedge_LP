@@ -86,9 +86,14 @@ const Available: React.FC = () => {
     width > BREAKPOINTS.lg ? 3 : width > BREAKPOINTS.sm ? 2 : 1;
 
   const CAN_SHIFT_LEFT = offset < 0;
-
   const CAN_SHIFT_RIGHT =
     Math.abs(offset) < CARD_SIZE * (availableItems.length - CARD_BUFFER);
+
+  // PCサイズの時の中央寄せ用のオフセット計算
+  const centerOffset =
+    width > BREAKPOINTS.lg
+      ? (width - (CARD_WIDTH + MARGIN) * availableItems.length) / 2
+      : 0;
 
   const shiftLeft = () => {
     if (!CAN_SHIFT_LEFT) return;
@@ -132,7 +137,7 @@ const Available: React.FC = () => {
         <div className="relative">
           <motion.div
             animate={{
-              x: offset,
+              x: offset + centerOffset,
             }}
             className="flex"
           >
@@ -141,29 +146,31 @@ const Available: React.FC = () => {
             ))}
           </motion.div>
 
-          {/* Navigation Buttons */}
-          <>
-            <motion.button
-              initial={false}
-              animate={{
-                x: CAN_SHIFT_LEFT ? "0%" : "-100%",
-              }}
-              className="absolute left-0 top-[60%] z-31 rounded-r-xl bg-slate-100/30 p-3 pl-2 text-4xl text-white backdrop-blur-sm transition-[padding] hover:pl-3"
-              onClick={shiftLeft}
-            >
-              <FiChevronLeft />
-            </motion.button>
-            <motion.button
-              initial={false}
-              animate={{
-                x: CAN_SHIFT_RIGHT ? "0%" : "100%",
-              }}
-              className="absolute right-0 top-[60%] z-31 rounded-l-xl bg-slate-100/30 p-3 pr-2 text-4xl text-white backdrop-blur-sm transition-[padding] hover:pr-3"
-              onClick={shiftRight}
-            >
-              <FiChevronRight />
-            </motion.button>
-          </>
+          {/* Navigation Buttons - PCサイズでは非表示 */}
+          {width <= BREAKPOINTS.lg && (
+            <>
+              <motion.button
+                initial={false}
+                animate={{
+                  x: CAN_SHIFT_LEFT ? "0%" : "-100%",
+                }}
+                className="absolute left-0 top-[60%] z-31 rounded-r-xl bg-slate-100/30 p-3 pl-2 text-4xl text-white backdrop-blur-sm transition-[padding] hover:pl-3"
+                onClick={shiftLeft}
+              >
+                <FiChevronLeft />
+              </motion.button>
+              <motion.button
+                initial={false}
+                animate={{
+                  x: CAN_SHIFT_RIGHT ? "0%" : "100%",
+                }}
+                className="absolute right-0 top-[60%] z-31 rounded-l-xl bg-slate-100/30 p-3 pr-2 text-4xl text-white backdrop-blur-sm transition-[padding] hover:pr-3"
+                onClick={shiftRight}
+              >
+                <FiChevronRight />
+              </motion.button>
+            </>
+          )}
         </div>
       </div>
     </section>

@@ -4,7 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import styles from "./Available.module.css";
 
-const SOLUTION_TITLE = "無線機×ネットワークが生み出す効果";
+const SOLUTION_TITLE =
+  "インカム・トランシーバー・無線機×ネットワークが生み出す効果";
 
 const SOLUTION_ITEMS = [
   {

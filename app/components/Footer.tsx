@@ -164,12 +164,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* About Transceiver Column */}
+          {/* About Tranceiver Column */}
           <div>
             <h3 className="text-white font-semibold mb-1">
               インカム・トランシーバー・無線機について
             </h3>
-            <p className="text-[#af40ff] text-xs mb-4">ABOUT TRANACEIVER</p>
+            <p className="text-[#af40ff] text-xs mb-4">ABOUT TRANCEIVER</p>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link

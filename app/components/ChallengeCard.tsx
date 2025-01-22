@@ -33,7 +33,9 @@ const ChallengeCard: React.FC<CardProps> = ({
             </div>
             <div className="back">
               <h3>解決策</h3>
-              <p>{solution}</p>
+              <p className="text-gray-600 mb-4 whitespace-pre-line">
+                {solution}
+              </p>
             </div>
           </div>
         </li>
@@ -171,7 +173,7 @@ const StyledWrapper = styled.div<{ position: "left" | "right" }>`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
     background: #333;
     color: #fff;
@@ -186,6 +188,8 @@ const StyledWrapper = styled.div<{ position: "left" | "right" }>`
     font-size: 1.125rem;
     margin-bottom: 0.75rem;
     font-weight: 600;
+    width: 100%;
+    text-align: left;
 
     @media (min-width: 768px) {
       font-size: 1.2rem;
@@ -199,6 +203,8 @@ const StyledWrapper = styled.div<{ position: "left" | "right" }>`
 
   p {
     font-size: 0.875rem;
+    text-align: left;
+    width: 100%;
 
     @media (min-width: 768px) {
       font-size: 0.95rem;

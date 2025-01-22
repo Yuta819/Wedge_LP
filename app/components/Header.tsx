@@ -144,7 +144,7 @@ const Logo = ({ isTransparent }: { isTransparent: boolean }) => {
     >
       <Image
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Wedge_logo-xo5r0cc7EdC2Gegh3RH2tescM1q5ll.webp"
-        alt="Transceiver"
+        alt="トランシーバー"
         width={100}
         height={25}
         className={`transition-opacity duration-300 ${

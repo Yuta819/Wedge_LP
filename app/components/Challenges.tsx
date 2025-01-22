@@ -27,11 +27,11 @@ const industryData = {
 };
 
 const industries: { id: IndustryType; name: string; icon: IconType }[] = [
-  { id: "school", name: "学校", icon: FaSchool },
   { id: "care", name: "介護", icon: FaHandHoldingHeart },
-  { id: "nursing", name: "看護", icon: FaUserNurse },
-  { id: "cardealer", name: "ディーラー", icon: FaCar },
+  { id: "nursing", name: "病院", icon: FaUserNurse },
+  { id: "school", name: "学校", icon: FaSchool },
   { id: "hotel", name: "宿泊", icon: FaBed },
+  { id: "cardealer", name: "ディーラー", icon: FaCar },
 ];
 
 // 型定義を追加
@@ -50,7 +50,7 @@ const Challenges: React.FC = () => {
         <h2
           className={`${styles.animatedGradientText} text-3xl font-bold mb-6 sm:mb-8 text-center`}
         >
-          こんな課題を持つ事業所におすすめ
+          こんな課題を持つ業種におすすめ
         </h2>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           {industries.map((industry) => (
