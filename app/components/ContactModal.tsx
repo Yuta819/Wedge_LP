@@ -275,6 +275,33 @@ const PhoneInfo = styled.p`
   text-align: center;
 `;
 
+const CloseButton = styled.button`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(74, 0, 224, 0.3);
+  color: #4a00e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  z-index: 10;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #3b82f6;
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+`;
+
 const ContactModal: React.FC<ContactModalProps> = ({
   isOpen,
   initialMessage,
@@ -422,6 +449,21 @@ const ContactModal: React.FC<ContactModalProps> = ({
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
         <GlassCard>
+          <CloseButton onClick={onClose} aria-label="閉じる">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </CloseButton>
           <DecorativeShape />
           <DecorativeShape />
           <ContentWrapper>
