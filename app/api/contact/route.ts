@@ -27,24 +27,24 @@ export async function POST(request: Request) {
 
     // Create transporter
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: process.env.SMTP_SECURE === "true",
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASSWORD,
       },
     });
 
     // メール送信前の検証
-    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
       throw new Error("メール送信に必要な環境変数が設定されていません");
     }
 
     // 会社宛のメール設定
     const companyMailOptions = {
-      from: email,
-      to: process.env.GMAIL_USER,
+      from: "info@aaa-wedge.co.jp",
+      to: "info@aaa-wedge.co.jp",
       subject:
         "インカム・トランシーバー・無線機×インターネットに関するお問い合わせ",
       text: `
@@ -64,7 +64,7 @@ ${message}
 
     // お客様宛の確認メール設定
     const customerMailOptions = {
-      from: process.env.GMAIL_USER,
+      from: "info@aaa-wedge.co.jp",
       to: email,
       subject: "お問い合わせありがとうございます(ウェッジ株式会社)",
       text: `${lastName} ${firstName} 様
