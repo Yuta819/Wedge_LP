@@ -20,7 +20,7 @@ export default function Home() {
       <Information show={false} />
       <Hero />
       <Available />
-      <SectionCTA title="新たな無線機の可能性を体験しませんか？" />
+      <SectionCTA title="新たな無線機の可能性を体験してみませんか？" />
       <Solution />
       <SectionCTA title="業務効率化への第一歩はここにあります" />
       <Challenges />
