@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "無線機×インターネット | Wedge",
     description:
       "無線機とインターネットを組み合わせた革新的なソリューション。業務効率化と生産性向上を実現する次世代の無線機システムをご提供します。",
-    url: "https://wedge-lp.vercel.app/",
+    url: "https://total-solution.aaa-wedge.co.jp/",
     siteName: "Wedge",
     images: [
       {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://wedge-lp.vercel.app/",
+    canonical: "https://total-solution.aaa-wedge.co.jp/",
   },
 };
 
