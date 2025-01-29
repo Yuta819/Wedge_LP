@@ -43,8 +43,8 @@ export async function POST(request: Request) {
 
     // 会社宛のメール設定
     const companyMailOptions = {
-      from: "info@aaa-wedge.co.jp",
-      to: "info@aaa-wedge.co.jp",
+      from: "total-solution@aaa-wedge.co.jp",
+      to: "total-solution@aaa-wedge.co.jp",
       subject:
         "インカム・トランシーバー・無線機×インターネットに関するお問い合わせ",
       text: `
@@ -64,7 +64,7 @@ ${message}
 
     // お客様宛の確認メール設定
     const customerMailOptions = {
-      from: "info@aaa-wedge.co.jp",
+      from: "total-solution@aaa-wedge.co.jp",
       to: email,
       subject: "お問い合わせありがとうございます(ウェッジ株式会社)",
       text: `${lastName} ${firstName} 様
